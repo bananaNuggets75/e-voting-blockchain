@@ -41,4 +41,4 @@ def vote(request):
 
         return redirect('results')
 
-    return render(request, 'evoting/vote.html', {'voters': voters, 'candidates': candidates})
+    return render(request, 'vote.html', {'voters': voters, 'candidates': candidates})
