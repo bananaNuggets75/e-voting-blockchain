@@ -1,0 +1,11 @@
+<h1>Cast Your Vote</h1>
+<form method="POST">
+  {% csrf_token %}
+  <label for="voter">Select Voter:</label>
+  <select name="voter">{% for v in voters %}<option value="{{ v.id }}">{{ v.name }}</option>{% endfor %}</select><br>
+
+  <label for="candidate">Select Candidate:</label>
+  <select name="candidate">{% for c in candidates %}<option value="{{ c.id }}">{{ c.name }}</option>{% endfor %}</select><br>
+
+  <button type="submit">Vote</button>
+</form>
