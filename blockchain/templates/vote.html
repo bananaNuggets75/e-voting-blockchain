@@ -8,4 +8,7 @@
   <select name="candidate">{% for c in candidates %}<option value="{{ c.id }}">{{ c.name }}</option>{% endfor %}</select><br>
 
   <button type="submit">Vote</button>
+
+  <a href="{% url 'results' %}">View Results</a>
+
 </form>
