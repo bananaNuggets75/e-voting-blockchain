@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Voting Results</title>
+</head>
+<body>
+  <h1>Voting Results</h1>
+
+  {% if votes %}
+    <ul>
+      {% for vote in votes %}
+        <li>{{ vote.candidate__name }} - {{ vote.total }} vote{{ vote.total|pluralize }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No votes have been cast yet.</p>
+  {% endif %}
+
+  <a href="{% url 'vote' %}">Back to Voting</a>
+</body>
+</html>
