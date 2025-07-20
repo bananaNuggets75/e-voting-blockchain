@@ -2,13 +2,14 @@ from django.db import models
 import hashlib
 import json
 from datetime import datetime
+from django.contrib.auth.models import User
 
 class Voter(models.Model):
-    name = models.CharField(max_length=100)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     has_voted = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.name
+        return self.user.username
 
 class Candidate(models.Model):
     name = models.CharField(max_length=100)
